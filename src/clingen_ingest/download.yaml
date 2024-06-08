@@ -3,7 +3,7 @@
 ### The configuration is used by `kghub-downloader`.
 ### For more information, see https://github.com/monarch-initiative/kghub-downloader
 ---
-- url: http://erepo.clinicalgenome.org/evrepo/api/classifications/all\?format\=tabbed
+- url: http://erepo.clinicalgenome.org/redmine/projects/evrepo/pcer/api/classifications/all?format=tabbed
   local_name: data/clingen_variants.tsv
 -
   url: http://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt
