@@ -1,0 +1,10 @@
+### This file is a YAML configuration that specifies
+### the data to be downloaded and ingested for this project.
+### The configuration is used by `kghub-downloader`.
+### For more information, see https://github.com/monarch-initiative/kghub-downloader
+---
+- url: http://erepo.clinicalgenome.org/evrepo/api/classifications/all\?format\=tabbed
+  local_name: data/clingen_variants.tsv
+-
+  url: http://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt
+  local_name: data/hgnc_complete_set.txt
