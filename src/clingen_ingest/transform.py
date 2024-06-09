@@ -30,7 +30,12 @@ while (row := koza_app.get_row()) is not None:
     # For more information, see https://koza.monarchinitiative.org/Ingests/transform
     entities = []
 
+    # Initially, skip rows with no variant, TODO: Revisit this decision after consulting in the general context of g2d
+    if not row["ClinVar Variation Id"]:
+        continue
+
     variant_id = "CLINVAR:{}".format(row['ClinVar Variation Id'])
+
     gene_symbol = row['HGNC Gene Symbol']
     gene_id = "HGNC:" + hgnc_gene_lookup.get(gene_symbol)['hgnc_id'] if gene_symbol in hgnc_gene_lookup else None
     original_disease_predicate = row["Assertion"]
