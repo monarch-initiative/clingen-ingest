@@ -1,7 +1,0 @@
-category	subject_prefix	predicate	negated	original_predicate	object_prefix	count_star()
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:causes		Likely Pathogenic	MONDO	1518
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:causes		Pathogenic	MONDO	1929
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:contributes_to	true	Benign	MONDO	792
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:contributes_to	true	Likely Benign	MONDO	704
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:related_to		Uncertain Significance	MONDO	2109
-biolink:VariantToGeneAssociation	CLINVAR	biolink:is_sequence_variant_of			HGNC	6961
