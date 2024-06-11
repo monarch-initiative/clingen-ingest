@@ -1,4 +1,5 @@
 """clingen-ingest package."""
+
 import importlib_metadata
 
 try:

@@ -1,6 +1,12 @@
 import uuid  # For generating UUIDs for associations
 
-from biolink_model.datamodel.pydanticmodel_v2 import *  # Replace * with any necessary data classes from the Biolink Model
+from biolink_model.datamodel.pydanticmodel_v2 import (
+    AgentTypeEnum,
+    KnowledgeLevelEnum,
+    SequenceVariant,
+    VariantToDiseaseAssociation,
+    VariantToGeneAssociation,
+)
 from koza.cli_utils import get_koza_app
 
 koza_app = get_koza_app("clingen_variant")
@@ -12,6 +18,7 @@ CONTRIBUTES_TO = "biolink:contributes_to"
 RELATED_TO = "biolink:related_to"
 
 seen_variants = {}
+
 
 def get_disese_predicate_and_negation(clinical_significance):
     if clinical_significance == 'Benign' or clinical_significance == 'Likely Benign':
@@ -30,6 +37,9 @@ while (row := koza_app.get_row()) is not None:
     # For more information, see https://koza.monarchinitiative.org/Ingests/transform
     entities = []
 
+    if row["Retracted"]:
+        continue
+
     # Initially, skip rows with no variant, TODO: Revisit this decision after consulting in the general context of g2d
     if not row["ClinVar Variation Id"]:
         continue
@@ -40,18 +50,20 @@ while (row := koza_app.get_row()) is not None:
     gene_id = "HGNC:" + hgnc_gene_lookup.get(gene_symbol)['hgnc_id'] if gene_symbol in hgnc_gene_lookup else None
     original_disease_predicate = row["Assertion"]
     if variant_id not in seen_variants:
-        entities.append(SequenceVariant(
-           id = variant_id,
-           name = row['Variation'],
-           xref = [row['Allele Registry Id']],
-           # has_gene=  TODO: populate the first time, and then append for multiple genes?
-            in_taxon = ['NCBITaxon:9606'],
-            in_taxon_label = 'Homo sapiens',
-        ))
+        entities.append(
+            SequenceVariant(
+                id=variant_id,
+                name=row['Variation'],
+                xref=[row['Allele Registry Id']],
+                # has_gene=  TODO: populate the first time, and then append for multiple genes?
+                in_taxon=['NCBITaxon:9606'],
+                in_taxon_label='Homo sapiens',
+            )
+        )
     predicate, negated = get_disese_predicate_and_negation(original_disease_predicate)
     entities.append(
         VariantToDiseaseAssociation(
-            id = str(uuid.uuid4()),
+            id=str(uuid.uuid4()),
             subject=variant_id,
             predicate=predicate,
             negated=negated,
@@ -68,7 +80,7 @@ while (row := koza_app.get_row()) is not None:
             VariantToGeneAssociation(
                 id=str(uuid.uuid4()),
                 subject=variant_id,
-                predicate=IS_SEQUENCE_VARIANT_OF,  # TODO: more specific predicates might be possible, is_missense_variant_of etc
+                predicate=IS_SEQUENCE_VARIANT_OF,  # TODO: more specific predicates? is_missense_variant_of etc
                 object=gene_id,
                 primary_knowledge_source="infores:clingen",
                 aggregator_knowledge_source=["infores:monarchinitiative"],

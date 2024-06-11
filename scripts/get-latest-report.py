@@ -1,10 +1,11 @@
-import requests
 import json
+
+import requests
 
 
 def main():
     url = "https://api.github.com/repos/monarch-initiative/clingen-ingest/releases/latest"
-    
+
     # Get the latest release from the GitHub API
     response = requests.get(url)
     if response.status_code != 200:

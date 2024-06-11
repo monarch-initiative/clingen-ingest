@@ -1,22 +1,24 @@
 """Command line interface for clingen-ingest."""
-import logging
 
+import logging
 from pathlib import Path
 
+import typer
 from kghub_downloader.download_utils import download_from_yaml
 from koza.cli_utils import transform_source
-import typer
 
 app = typer.Typer()
 logger = logging.getLogger(__name__)
 
 
 @app.callback()
-def callback(version: bool = typer.Option(False, "--version", is_eager=True),
+def callback(
+    version: bool = typer.Option(False, "--version", is_eager=True),
 ):
     """clingen-ingest CLI."""
     if version:
         from clingen_ingest import __version__
+
         typer.echo(f"clingen-ingest version: {__version__}")
         raise typer.Exit()
 
@@ -45,7 +47,7 @@ def transform(
         row_limit=row_limit,
         verbose=verbose,
     )
-    
+
 
 if __name__ == "__main__":
     app()
