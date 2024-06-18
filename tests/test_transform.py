@@ -9,6 +9,7 @@ https://koza.monarchinitiative.org/Usage/testing/
 """
 
 import pytest
+from koza.utils.testing_utils import mock_koza
 
 # Define the ingest name and transform script path
 INGEST_NAME = "clingen_variant"
