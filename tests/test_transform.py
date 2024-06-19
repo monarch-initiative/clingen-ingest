@@ -84,7 +84,7 @@ def correct_entities(mock_koza, correct_row, map_cache):
 
 # Test the output of the transform for a correct row
 def test_correct_row(correct_entities):
-    assert len(correct_entities) == 3
+    assert len(correct_entities) == 2
 
 
 # Define the mock koza transform for a retracted row

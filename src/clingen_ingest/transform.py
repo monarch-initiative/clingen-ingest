@@ -46,6 +46,7 @@ while (row := koza_app.get_row()) is not None:
         # print(f"First missing id row: {row}"); quit()
         continue
 
+    # print(f"First correct row: {row}"); quit()
     variant_id = "CLINVAR:{}".format(row['ClinVar Variation Id'])
 
     gene_symbol = row['HGNC Gene Symbol']
