@@ -37,11 +37,13 @@ while (row := koza_app.get_row()) is not None:
     # For more information, see https://koza.monarchinitiative.org/Ingests/transform
     entities = []
 
-    if row["Retracted"]:
+    if row["Retracted"] == "true":
+        # print(f"First retracted row: {row}"); quit()
         continue
 
     # Initially, skip rows with no variant, TODO: Revisit this decision after consulting in the general context of g2d
-    if not row["ClinVar Variation Id"]:
+    if row["ClinVar Variation Id"] == "-":
+        # print(f"First missing id row: {row}"); quit()
         continue
 
     variant_id = "CLINVAR:{}".format(row['ClinVar Variation Id'])
