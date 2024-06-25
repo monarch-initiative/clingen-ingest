@@ -85,6 +85,24 @@ def correct_entities(mock_koza, correct_row, map_cache):
 # Test the output of the transform for a correct row
 def test_correct_row(correct_entities):
     assert len(correct_entities) == 2
+    entity_a, entity_b = correct_entities
+    # test entity_a
+    assert entity_a.id == 'CLINVAR:102742'
+    assert entity_a.name == 'NM_000277.2(PAH):c.581T>C (p.Leu194Pro)'
+    assert entity_a.xref == ['CA229633']
+    assert entity_a.in_taxon == ['NCBITaxon:9606']
+    assert entity_a.in_taxon_label == 'Homo sapiens'
+
+    # test entity_b
+    assert entity_b.subject == 'CLINVAR:102742'
+    assert entity_b.predicate == 'biolink:causes'
+    assert entity_b.negated is False
+    assert entity_b.original_predicate == 'Likely Pathogenic'
+    assert entity_b.object == 'MONDO:0009861'
+    assert entity_b.primary_knowledge_source == 'infores:clingen'
+    assert entity_b.aggregator_knowledge_source == ['infores:monarchinitiative']
+    assert entity_b.knowledge_level == 'knowledge_assertion'
+    assert entity_b.agent_type == 'manual_agent'
 
 
 # Define the mock koza transform for a retracted row
@@ -97,3 +115,13 @@ def retracted_entities(mock_koza, retracted_row, map_cache):
 # Test the output of the transform for a retracted row
 def test_retracted_row(retracted_entities):
     assert len(retracted_entities) == 0
+
+
+@pytest.fixture
+def missing_entity_id(mock_koza, correct_row, map_cache):
+    correct_row["ClinVar Variation Id"] = "-"
+    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+
+
+def test_missing_entity_id(missing_entity_id):
+    assert len(missing_entity_id) == 0

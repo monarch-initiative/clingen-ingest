@@ -91,4 +91,5 @@ while (row := koza_app.get_row()) is not None:
                 agent_type=AgentTypeEnum.manual_agent,
             )
         )
+        # print(f"First gene row: {row}"); quit();
     koza_app.write(*entities)
