@@ -38,12 +38,10 @@ while (row := koza_app.get_row()) is not None:
     entities = []
 
     if row["Retracted"] == "true":
-        # print(f"First retracted row: {row}"); quit()
         continue
 
     # Initially, skip rows with no variant, TODO: Revisit this decision after consulting in the general context of g2d
-    if row["ClinVar Variation Id"] == "-":
-        # print(f"First missing id row: {row}"); quit()
+    if row["ClinVar Variation Id"] == "-" or row["Variation"] == "":
         continue
 
     # print(f"First correct row: {row}"); quit()
@@ -78,6 +76,8 @@ while (row := koza_app.get_row()) is not None:
             agent_type=AgentTypeEnum.manual_agent,
         )
     )
+    # if gene_id is None:
+    #     print(f"First non-gene_id row: {row}"); quit();
     if gene_id is not None:
         entities.append(
             VariantToGeneAssociation(
