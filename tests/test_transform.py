@@ -51,56 +51,6 @@ def correct_row():
     }
 
 
-@pytest.fixture
-def correct_row_no_gene_id():
-    return {
-        'Variation': 'NC_000021.9:g.(?_35048836)_(35048905_?)del',
-        'ClinVar Variation Id': '463975',
-        'Allele Registry Id': '-',
-        'HGVS Expressions': 'NC_000021.9:g.(?_35048836)_(35048905_?)del',
-        'HGNC Gene Symbol': 'N/A',
-        'Disease': 'hereditary thrombocytopenia and hematologic cancer predisposition syndrome',
-        'Mondo Id': 'MONDO:0011071',
-        'Mode of Inheritance': 'Autosomal dominant inheritance',
-        'Assertion': 'Pathogenic',
-        'Applied Evidence Codes (Met)': 'PS4, PP1_Strong, PVS1_Moderate, PM5_Supporting, PM2_Supporting',
-        'Applied Evidence Codes (Not Met)': 'BP1, BP4, BP3, BP2, BA1, PS1, PS3, PS2, BP7, BP5, BS3',
-        'Summary of interpretation': 'The deletion of exons 1 (non-coding) and 2 or exons 1, 2, and 3 TRUNCATED',
-        'Expert Panel': 'Myeloid Malignancy VCEP',
-        'Guideline': 'https://www.clinicalgenome.org/affiliation/50034/docs/assertion-criteria',
-        'Approval Date': '2024-03-26',
-        'Published Date': '2024-03-26',
-        'Retracted': 'false',
-        'Evidence Repo Link': 'https://erepo.genome.network/evrepo/ui/classification/CV463975/MONDO:0011071/008',
-        'Uuid': '5d15c32f-47fc-4ba9-8d74-b998374ee11d'}
-
-
-@pytest.fixture
-def retracted_row():
-    return {
-        'Variation': '',
-        'ClinVar Variation Id': '-',
-        'Allele Registry Id': 'CA4239423',
-        'HGVS Expressions': 'NM_001354803.2:c.182C>A',
-        'HGNC Gene Symbol': 'GCK',
-        'Disease': 'monogenic diabetes',
-        'Mondo Id': 'MONDO:0015967',
-        'Mode of Inheritance': 'Semidominant inheritance',
-        'Assertion': 'Likely Pathogenic',
-        'Applied Evidence Codes (Met)': 'PVS1, PM2_Supporting',
-        'Applied Evidence Codes (Not Met)': 'PS4, PP4',
-        'Summary of interpretation': 'The c.1148C>A variant in the glucokinase gene',
-        'PubMed Articles': '',
-        'Expert Panel': 'Monogenic Diabetes VCEP',
-        'Guideline': '',
-        'Approval Date': '2024-05-24',
-        'Published Date': '2024-05-24',
-        'Retracted': 'true',
-        'Evidence Repo Link': 'https://erepo.genome.network/evrepo/ui/classification/CA4239423/MONDO:0015967/086',
-        'Uuid': 'd5362e38-f996-4ef0-b41b-c6bbcdbfb2b5',
-    }
-
-
 # Define the mock koza transform for a correct row
 @pytest.fixture
 def correct_entities(mock_koza, correct_row, map_cache):
@@ -116,6 +66,7 @@ def test_correct_row(correct_entities):
     assert entity.id == 'CLINVAR:586'
     assert entity.name == 'NM_000277.2(PAH):c.1A>G (p.Met1Val)'
     assert entity.xref == ['CA114360']
+    assert entity.has_gene == ['HGNC:8582']
     assert entity.in_taxon == ['NCBITaxon:9606']
     assert entity.in_taxon_label == 'Homo sapiens'
 
@@ -144,23 +95,24 @@ def test_correct_row(correct_entities):
 
 # Define the mock koza transform for a correct row with no gene_id
 @pytest.fixture
-def correct_entities_no_gene_id(mock_koza, correct_row_no_gene_id, map_cache):
+def correct_entities_no_gene_id(mock_koza, correct_row, map_cache):
     # Returns [entity, association] for a single row
-    return mock_koza(INGEST_NAME, correct_row_no_gene_id, TRANSFORM_SCRIPT, map_cache=map_cache)
+    correct_row["HGNC Gene Symbol"] = "N/A"
+    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
 
 
 # Test the output of the transform for a correct row
 def test_correct_row_no_gene_id(correct_entities_no_gene_id):
     # test entity
     assert len(correct_entities_no_gene_id) == 2
-    pass
 
 
 # Define the mock koza transform for a retracted row
 @pytest.fixture
-def retracted_entities(mock_koza, retracted_row, map_cache):
+def retracted_entities(mock_koza, correct_row, map_cache):
     # Returns [entity_a, entity_b, association] for a single row
-    return mock_koza(INGEST_NAME, retracted_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+    correct_row["Retracted"] = "true"
+    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
 
 
 # Test the output of the transform for a retracted row

@@ -39,6 +39,7 @@ node_properties:
   - name
   - category
   - xref
+  - has_gene
   - in_taxon
   - in_taxon_label
 

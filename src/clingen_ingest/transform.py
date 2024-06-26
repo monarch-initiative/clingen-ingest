@@ -44,7 +44,6 @@ while (row := koza_app.get_row()) is not None:
     if row["ClinVar Variation Id"] == "-" or row["Variation"] == "":
         continue
 
-    # print(f"First correct row: {row}"); quit()
     variant_id = "CLINVAR:{}".format(row['ClinVar Variation Id'])
 
     gene_symbol = row['HGNC Gene Symbol']
@@ -56,7 +55,8 @@ while (row := koza_app.get_row()) is not None:
                 id=variant_id,
                 name=row['Variation'],
                 xref=[row['Allele Registry Id']],
-                # has_gene=  TODO: populate the first time, and then append for multiple genes?
+                # There are no duplicate variants, so we can just populate has_gene and not worry about multiples
+                has_gene= [gene_id] if gene_id is not None else None,
                 in_taxon=['NCBITaxon:9606'],
                 in_taxon_label='Homo sapiens',
             )
@@ -76,8 +76,6 @@ while (row := koza_app.get_row()) is not None:
             agent_type=AgentTypeEnum.manual_agent,
         )
     )
-    # if gene_id is None:
-    #     print(f"First non-gene_id row: {row}"); quit();
     if gene_id is not None:
         entities.append(
             VariantToGeneAssociation(
@@ -91,5 +89,4 @@ while (row := koza_app.get_row()) is not None:
                 agent_type=AgentTypeEnum.manual_agent,
             )
         )
-        # print(f"First gene row: {row}"); quit();
     koza_app.write(*entities)
