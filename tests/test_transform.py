@@ -11,6 +11,8 @@ https://koza.monarchinitiative.org/Usage/testing/
 import pytest
 from koza.utils.testing_utils import mock_koza
 
+mock_koza = mock_koza  # This line is needed to avoid black removing the import on formatting
+
 # Define the ingest name and transform script path
 INGEST_NAME = "clingen_variant"
 TRANSFORM_SCRIPT = "./src/clingen_ingest/transform.py"
@@ -47,7 +49,7 @@ def correct_row():
         'Published Date': '2019-05-10',
         'Retracted': 'false',
         'Evidence Repo Link': 'https://erepo.genome.network/evrepo/ui/classification/CA114360/MONDO:0009861/006',
-        'Uuid': '89f04437-ed5d-4735-8c4a-a9b1d91d10ea'
+        'Uuid': '89f04437-ed5d-4735-8c4a-a9b1d91d10ea',
     }
 
 
