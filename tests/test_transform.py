@@ -157,11 +157,11 @@ def correct_entities_benign(mock_koza, correct_row, map_cache):
 
 # Test 'clinical_significance' values of 'Benign'
 def test_correct_row_benign(correct_entities_benign):
-    assert len(correct_entities_benign) == 3
-    entity, association_a, association_b = correct_entities_benign
-    assert association_a.predicate == 'biolink:contributes_to'
-    assert association_a.negated is True
-    assert association_a.original_predicate == 'Benign'
+    assert len(correct_entities_benign) == 0
+    # entity, association_a, association_b = correct_entities_benign
+    # assert association_a.predicate == 'biolink:contributes_to'
+    # assert association_a.negated is True
+    # assert association_a.original_predicate == 'Benign'
 
 
 # Define the mock koza transform for a row with 'Likely Benign' as the clinical_significance
@@ -173,11 +173,11 @@ def correct_entities_likely_benign(mock_koza, correct_row, map_cache):
 
 # Test 'clinical_significance' values of 'Likely Benign'
 def test_correct_row_likely_benign(correct_entities_likely_benign):
-    assert len(correct_entities_likely_benign) == 3
-    entity, association_a, association_b = correct_entities_likely_benign
-    assert association_a.predicate == 'biolink:contributes_to'
-    assert association_a.negated is True
-    assert association_a.original_predicate == 'Likely Benign'
+    assert len(correct_entities_likely_benign) == 0
+    # entity, association_a, association_b = correct_entities_likely_benign
+    # assert association_a.predicate == 'biolink:contributes_to'
+    # assert association_a.negated is True
+    # assert association_a.original_predicate == 'Likely Benign'
 
 
 # Define the mock koza transform for a row with 'Likely Pathogenic' as the clinical_significance
@@ -191,7 +191,7 @@ def correct_entities_likely_pathogenic(mock_koza, correct_row, map_cache):
 def test_correct_row_likely_pathogenic(correct_entities_likely_pathogenic):
     assert len(correct_entities_likely_pathogenic) == 3
     entity, association_a, association_b = correct_entities_likely_pathogenic
-    assert association_a.predicate == 'biolink:causes'
+    assert association_a.predicate == 'biolink:associated_with_increased_likelihood_of'
     assert association_a.negated is False
     assert association_a.original_predicate == 'Likely Pathogenic'
 
@@ -207,7 +207,7 @@ def correct_entities_uncertain_significance(mock_koza, correct_row, map_cache):
 def test_correct_row_uncertain_significance(correct_entities_uncertain_significance):
     assert len(correct_entities_uncertain_significance) == 3
     entity, association_a, association_b = correct_entities_uncertain_significance
-    assert association_a.predicate == 'biolink:associated_with'
+    assert association_a.predicate == 'biolink:genetically_associated_with'
     assert association_a.negated is False
     assert association_a.original_predicate == 'Uncertain Significance'
 

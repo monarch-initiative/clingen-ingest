@@ -12,22 +12,29 @@ from koza.cli_utils import get_koza_app
 koza_app = get_koza_app("clingen_variant")
 hgnc_gene_lookup = koza_app.get_map('hgnc_gene_lookup')
 
+# Variant to gene predicate
+IS_SEQUENCE_VARIANT_OF = "biolink:is_sequence_variant_of"
+
+# Variant to disease
 CAUSES = "biolink:causes"
-IS_SEQUENCE_VARIANT_OF = 'biolink:is_sequence_variant_of'
-CONTRIBUTES_TO = "biolink:contributes_to"
-ASSOCIATED_WITH = "biolink:associated_with"
+ASSOCIATED_WITH_INCREASED_LIKELIHOOD = "biolink:associated_with_increased_likelihood_of"
+GENETICALLY_ASSOCIATED_WITH = "biolink:genetically_associated_with"
+# CONTRIBUTES_TO = "biolink:contributes_to"
 
 
 def get_disease_predicate_and_negation(clinical_significance):
-    if clinical_significance == 'Benign' or clinical_significance == 'Likely Benign':
-        return CONTRIBUTES_TO, True
-    elif clinical_significance == 'Likely Pathogenic' or clinical_significance == 'Pathogenic':
+    # We're no longer importing benign variants, so we don't need to handle them
+    # if clinical_significance == 'Benign' or clinical_significance == 'Likely Benign':
+    #     return CONTRIBUTES_TO, True
+    if clinical_significance == 'Pathogenic':
         return CAUSES, False
+    elif clinical_significance == 'Likely Pathogenic':
+        return ASSOCIATED_WITH_INCREASED_LIKELIHOOD, False
     elif clinical_significance == 'Uncertain Significance':
         # DONE: not sure how we should represent uncertain significance
         # Based on my reading of the Biolink Model and a sampling of these rows
-        # I think "biolink:associated_with" is the most appropriate predicate
-        return ASSOCIATED_WITH, False
+        # I think "biolink:genetically_associated_with" is the most appropriate predicate
+        return GENETICALLY_ASSOCIATED_WITH, False
     else:
         raise ValueError(f"Not sure how to handle _assertion: '{clinical_significance}'")
 
@@ -38,7 +45,8 @@ while (row := koza_app.get_row()) is not None:
     # For more information, see https://koza.monarchinitiative.org/Ingests/transform
     entities = []
 
-    if row["Retracted"] == "true":
+    # Skipping rows with 'Benign' or 'Likely Benign' assertions and retracted variants
+    if row["Assertion"] == "Benign" or row["Assertion"] == "Likely Benign" or row["Retracted"] == "true":
         continue
 
     # DONE: Initially skipping rows with no variant; revisit this decision in the general context of g2d
