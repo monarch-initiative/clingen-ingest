@@ -2,7 +2,26 @@
 
 | [Documentation](https://monarch-initiative.github.io/clingen-ingest) |
 
-Conversion of clingen variant file to biolink model format
+This repository is part of the Monarch Initiative's modular data ingestion pipeline for the Monarch Knowledge Graph. This transform is responsible for converting the clingen variant file to the biolink model format using the Koza transform library. The transform is run as a GitHub Action and the results are stored as GitHub artifacts in the release and imported into the Monarch Knowledge Graph at data.monarchinitiative.org.
+
+The current releases create Biolink Model nodes for SequenceVariant and edges for VariantToDiseaseAssociation and VariantToGeneAssociation.
+
+## Ingest Files and How Genes and Edges are Created
+
+Two files are used in this clingen-ingest transform. Specific file locations and information can be found in the download.yaml file.
+ - The clingen variant file (clingen_variants.tsv) from the [ClinGen site](https://clinicalgenome.org/). This file is a tab-separated file with one variant per line the columns for this file are all listed in the transform.yaml file.
+ - The mapping file for HGNC Gene Symbols to Gene IDs (hgnc_complete_set.txt) is downloaded from [EMBL's European Bioinformatics Institute](https://ebi.ac.uk) ftp site.
+
+### Variant Nodes
+SequenceVariant nodes are only created from ClinGen variants that are deemed Pathogenic or Likely Pathogenic. All variants listed as Likely Benign or Benign are currently discarded. We intend to investigate whether importing this additional information into the KG can be done in an informative way. We believe this subset provides the most credible information without cluttering the graph with information that may be difficult to interpret.
+
+All node variant IDs are assigned their 'ClinVar Variation Id' if available, otherwise their 'Allele Registry Id' is used. Gene IDs are mapped from Gene Symbol lookup using the HGNC Gene Map.
+
+### Variant to Disease Edges
+VariantToDiseaseAssociation edges are created for each variant using the variant ID from above and the 'Mondo Disease ID' from the ClinGen variant file. The 'Assertion' column is used to determine the predicate of the edge and these edges are only created for variants that are Pathogenic or Likely Pathogenic.
+
+### Variant to Gene Edges
+VariantToGeneAssociation edges are created for each variant using the variant ID from above and the gene ID mapped from the HGNC Gene Map using Gene Symbols. These edges are only created for variants that are Pathogenic or Likely Pathogenic.
 
 ## Requirements
 
