@@ -10,7 +10,7 @@ name: Create Release
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 3 * *'
+    - cron: '0 0 3 * *' # Monthly on the 3rd day of the month
 
 jobs:
   create-release:
