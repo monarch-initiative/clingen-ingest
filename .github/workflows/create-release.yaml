@@ -9,8 +9,8 @@ name: Create Release
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 0 * * 0'
+  schedule:
+    - cron: '0 0 3 * *'
 
 jobs:
   create-release:
@@ -50,4 +50,3 @@ jobs:
           files: |
             output/*
           generate_release_notes: true
-          draft: true
