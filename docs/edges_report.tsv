@@ -247,6 +247,8 @@ biolink:VariantToDiseaseAssociation	CA2017997777	biolink:associated_with_increas
 biolink:VariantToDiseaseAssociation	CA2017997779	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2017997780	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2018007653	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA2018007654	biolink:causes		Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA2018007655	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2018007672	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2023554331	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2229914895	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
@@ -345,6 +347,7 @@ biolink:VariantToDiseaseAssociation	CA2580612187	biolink:causes		Pathogenic	MOND
 biolink:VariantToDiseaseAssociation	CA2580612188	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2580617569	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2580617739	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA2580650458	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2581998917	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2582115078	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2582115911	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
@@ -383,6 +386,7 @@ biolink:VariantToDiseaseAssociation	CA2740089968	biolink:causes		Pathogenic	MOND
 biolink:VariantToDiseaseAssociation	CA2740099755	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2759533407	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2759533408	biolink:causes		Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA2797727079	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA281951	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2825000789	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA2830665544	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
@@ -411,7 +415,10 @@ biolink:VariantToDiseaseAssociation	CA291225782	biolink:associated_with_increase
 biolink:VariantToDiseaseAssociation	CA291227621	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA294887189	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA294896907	biolink:causes		Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA315408883	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA315411422	biolink:causes		Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA315420234	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
+biolink:VariantToDiseaseAssociation	CA322079952	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA32685503	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA32685671	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA32685841	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
@@ -514,6 +521,7 @@ biolink:VariantToDiseaseAssociation	CA343727113	biolink:genetically_associated_w
 biolink:VariantToDiseaseAssociation	CA343772379	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA343772388	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA343772391	biolink:causes		Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA343772421	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA343774510	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA343774795	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA343777244	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
@@ -522,6 +530,11 @@ biolink:VariantToDiseaseAssociation	CA346124255	biolink:associated_with_increase
 biolink:VariantToDiseaseAssociation	CA346365197	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA346367589	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA347215735	biolink:causes		Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA349036828	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA349036836	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA354446617	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
+biolink:VariantToDiseaseAssociation	CA354447789	biolink:causes		Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA367358198	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA367358349	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA367396714	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA367396716	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
@@ -630,6 +643,7 @@ biolink:VariantToDiseaseAssociation	CA367403035	biolink:causes		Pathogenic	MONDO
 biolink:VariantToDiseaseAssociation	CA367403041	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA367403045	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA367403047	biolink:causes		Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA367403318	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA367403522	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA367403541	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA367403544	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
@@ -712,6 +726,7 @@ biolink:VariantToDiseaseAssociation	CA386958695	biolink:causes		Pathogenic	MONDO
 biolink:VariantToDiseaseAssociation	CA386958785	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386958847	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386958912	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA386958942	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386959080	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386959120	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386959402	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
@@ -792,11 +807,10 @@ biolink:VariantToDiseaseAssociation	CA386969831	biolink:genetically_associated_w
 biolink:VariantToDiseaseAssociation	CA386970356	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386970411	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386970422	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
-biolink:VariantToDiseaseAssociation	CA386971548	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386971639	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386972011	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386972260	biolink:causes		Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA386972269	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
+biolink:VariantToDiseaseAssociation	CA386972269	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386972734	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386972790	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA386973446	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
@@ -808,6 +822,8 @@ biolink:VariantToDiseaseAssociation	CA392317923	biolink:causes		Pathogenic	MONDO
 biolink:VariantToDiseaseAssociation	CA392325153	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA392325892	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA395121845	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
+biolink:VariantToDiseaseAssociation	CA397316321	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
+biolink:VariantToDiseaseAssociation	CA397319701	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA397722455	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA397722480	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA397722888	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
@@ -820,7 +836,6 @@ biolink:VariantToDiseaseAssociation	CA397725976	biolink:causes		Pathogenic	MONDO
 biolink:VariantToDiseaseAssociation	CA397726273	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA397726277	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA397832787	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
-biolink:VariantToDiseaseAssociation	CA397849034	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA397954276	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA397954516	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA398323709	biolink:causes		Pathogenic	MONDO	1
@@ -836,11 +851,9 @@ biolink:VariantToDiseaseAssociation	CA399792888	biolink:causes		Pathogenic	MONDO
 biolink:VariantToDiseaseAssociation	CA399794330	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399794666	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399795582	biolink:causes		Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA399795907	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399796017	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399798192	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399798321	biolink:causes		Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA399799004	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399801004	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399801096	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399801154	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
@@ -880,14 +893,12 @@ biolink:VariantToDiseaseAssociation	CA399805805	biolink:associated_with_increase
 biolink:VariantToDiseaseAssociation	CA399805884	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399805912	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399805999	biolink:causes		Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA399806022	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399806084	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399806223	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399806384	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399806497	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399806749	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399806951	biolink:causes		Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA399807023	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA399807046	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA400020703	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA400021329	biolink:causes		Pathogenic	MONDO	1
@@ -1040,6 +1051,11 @@ biolink:VariantToDiseaseAssociation	CA410203630	biolink:genetically_associated_w
 biolink:VariantToDiseaseAssociation	CA410207975	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA410207977	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA410207999	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
+biolink:VariantToDiseaseAssociation	CA410676622	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
+biolink:VariantToDiseaseAssociation	CA410676856	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
+biolink:VariantToDiseaseAssociation	CA410676959	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA410677511	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA410677679	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA410780392	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA413496512	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA414444915	biolink:causes		Pathogenic	MONDO	1
@@ -1122,7 +1138,6 @@ biolink:VariantToDiseaseAssociation	CA500261104	biolink:causes		Pathogenic	MONDO
 biolink:VariantToDiseaseAssociation	CA500262444	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA500273575	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA500436058	biolink:causes		Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA500624244	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA500651220	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA504731701	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA519344969	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
@@ -1142,6 +1157,7 @@ biolink:VariantToDiseaseAssociation	CA645372267	biolink:associated_with_increase
 biolink:VariantToDiseaseAssociation	CA645535219	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA645584081	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA645614124	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
+biolink:VariantToDiseaseAssociation	CA658760369	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA658760617	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA658795235	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA658795239	biolink:causes		Pathogenic	MONDO	1
@@ -1194,7 +1210,6 @@ biolink:VariantToDiseaseAssociation	CA8622981	biolink:associated_with_increased_
 biolink:VariantToDiseaseAssociation	CA8622982	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA8622991	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA8623068	biolink:causes		Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA8623155	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA8623258	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA8623358	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA8623361	biolink:causes		Pathogenic	MONDO	1
@@ -1245,8 +1260,6 @@ biolink:VariantToDiseaseAssociation	CA915940299	biolink:genetically_associated_w
 biolink:VariantToDiseaseAssociation	CA915940309	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940315	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940323	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA915940324	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA915940325	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940332	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940334	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940374	biolink:causes		Pathogenic	MONDO	1
@@ -1268,7 +1281,6 @@ biolink:VariantToDiseaseAssociation	CA915940687	biolink:causes		Pathogenic	MONDO
 biolink:VariantToDiseaseAssociation	CA915940689	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940690	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940701	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
-biolink:VariantToDiseaseAssociation	CA915940720	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940722	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940723	biolink:causes		Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA915940724	biolink:causes		Pathogenic	MONDO	1
@@ -1309,9 +1321,9 @@ biolink:VariantToDiseaseAssociation	CA9870171	biolink:associated_with_increased_
 biolink:VariantToDiseaseAssociation	CA9870374	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
 biolink:VariantToDiseaseAssociation	CA9870415	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1
 biolink:VariantToDiseaseAssociation	CA9870528	biolink:genetically_associated_with		Uncertain Significance	MONDO	1
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1497
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:causes		Pathogenic	MONDO	1905
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:genetically_associated_with		Uncertain Significance	MONDO	2725
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	1532
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:causes		Pathogenic	MONDO	1928
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:genetically_associated_with		Uncertain Significance	MONDO	2758
 biolink:VariantToGeneAssociation	CA10549330	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA10549339	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA10549367	biolink:is_sequence_variant_of			HGNC	1
@@ -1560,6 +1572,8 @@ biolink:VariantToGeneAssociation	CA2017997777	biolink:is_sequence_variant_of			H
 biolink:VariantToGeneAssociation	CA2017997779	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2017997780	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2018007653	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA2018007654	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA2018007655	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2018007672	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2023554331	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2229914895	biolink:is_sequence_variant_of			HGNC	1
@@ -1657,6 +1671,7 @@ biolink:VariantToGeneAssociation	CA2580612187	biolink:is_sequence_variant_of			H
 biolink:VariantToGeneAssociation	CA2580612188	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2580617569	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2580617739	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA2580650458	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2581998917	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2582115078	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2582115911	biolink:is_sequence_variant_of			HGNC	1
@@ -1694,6 +1709,7 @@ biolink:VariantToGeneAssociation	CA2740089968	biolink:is_sequence_variant_of			H
 biolink:VariantToGeneAssociation	CA2740099755	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2759533407	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2759533408	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA2797727079	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA281951	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2825000789	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA2830665544	biolink:is_sequence_variant_of			HGNC	1
@@ -1722,7 +1738,10 @@ biolink:VariantToGeneAssociation	CA291225782	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA291227621	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA294887189	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA294896907	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA315408883	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA315411422	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA315420234	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA322079952	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA32685503	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA32685671	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA32685841	biolink:is_sequence_variant_of			HGNC	1
@@ -1825,6 +1844,7 @@ biolink:VariantToGeneAssociation	CA343727113	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA343772379	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA343772388	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA343772391	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA343772421	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA343774510	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA343774795	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA343777244	biolink:is_sequence_variant_of			HGNC	1
@@ -1833,6 +1853,11 @@ biolink:VariantToGeneAssociation	CA346124255	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA346365197	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA346367589	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA347215735	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA349036828	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA349036836	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA354446617	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA354447789	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA367358198	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA367358349	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA367396714	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA367396716	biolink:is_sequence_variant_of			HGNC	1
@@ -1941,6 +1966,7 @@ biolink:VariantToGeneAssociation	CA367403035	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA367403041	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA367403045	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA367403047	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA367403318	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA367403522	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA367403541	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA367403544	biolink:is_sequence_variant_of			HGNC	1
@@ -2023,6 +2049,7 @@ biolink:VariantToGeneAssociation	CA386958695	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA386958785	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386958847	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386958912	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA386958942	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386959080	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386959120	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386959402	biolink:is_sequence_variant_of			HGNC	1
@@ -2103,7 +2130,6 @@ biolink:VariantToGeneAssociation	CA386969831	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA386970356	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386970411	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386970422	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA386971548	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386971639	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386972011	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA386972260	biolink:is_sequence_variant_of			HGNC	1
@@ -2119,6 +2145,8 @@ biolink:VariantToGeneAssociation	CA392317923	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA392325153	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA392325892	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA395121845	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA397316321	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA397319701	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA397722455	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA397722480	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA397722888	biolink:is_sequence_variant_of			HGNC	1
@@ -2131,7 +2159,6 @@ biolink:VariantToGeneAssociation	CA397725976	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA397726273	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA397726277	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA397832787	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA397849034	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA397954276	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA397954516	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA398323709	biolink:is_sequence_variant_of			HGNC	1
@@ -2147,11 +2174,9 @@ biolink:VariantToGeneAssociation	CA399792888	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA399794330	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399794666	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399795582	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA399795907	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399796017	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399798192	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399798321	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA399799004	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399801004	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399801096	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399801154	biolink:is_sequence_variant_of			HGNC	1
@@ -2191,14 +2216,12 @@ biolink:VariantToGeneAssociation	CA399805805	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA399805884	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399805912	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399805999	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA399806022	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399806084	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399806223	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399806384	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399806497	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399806749	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399806951	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA399807023	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA399807046	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA400020703	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA400021329	biolink:is_sequence_variant_of			HGNC	1
@@ -2351,6 +2374,11 @@ biolink:VariantToGeneAssociation	CA410203630	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA410207975	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA410207977	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA410207999	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA410676622	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA410676856	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA410676959	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA410677511	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA410677679	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA410780392	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA413496512	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA414444915	biolink:is_sequence_variant_of			HGNC	1
@@ -2432,7 +2460,6 @@ biolink:VariantToGeneAssociation	CA500261104	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA500262444	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA500273575	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA500436058	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA500624244	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA500651220	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA504731701	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA519344969	biolink:is_sequence_variant_of			HGNC	1
@@ -2452,6 +2479,7 @@ biolink:VariantToGeneAssociation	CA645372267	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA645535219	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA645584081	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA645614124	biolink:is_sequence_variant_of			HGNC	1
+biolink:VariantToGeneAssociation	CA658760369	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA658760617	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA658795235	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA658795239	biolink:is_sequence_variant_of			HGNC	1
@@ -2503,7 +2531,6 @@ biolink:VariantToGeneAssociation	CA8622981	biolink:is_sequence_variant_of			HGNC
 biolink:VariantToGeneAssociation	CA8622982	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA8622991	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA8623068	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA8623155	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA8623258	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA8623358	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA8623361	biolink:is_sequence_variant_of			HGNC	1
@@ -2553,8 +2580,6 @@ biolink:VariantToGeneAssociation	CA915940299	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA915940309	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940315	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940323	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA915940324	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA915940325	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940332	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940334	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940374	biolink:is_sequence_variant_of			HGNC	1
@@ -2576,7 +2601,6 @@ biolink:VariantToGeneAssociation	CA915940687	biolink:is_sequence_variant_of			HG
 biolink:VariantToGeneAssociation	CA915940689	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940690	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940701	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CA915940720	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940722	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940723	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA915940724	biolink:is_sequence_variant_of			HGNC	1
@@ -2617,4 +2641,4 @@ biolink:VariantToGeneAssociation	CA9870171	biolink:is_sequence_variant_of			HGNC
 biolink:VariantToGeneAssociation	CA9870374	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA9870415	biolink:is_sequence_variant_of			HGNC	1
 biolink:VariantToGeneAssociation	CA9870528	biolink:is_sequence_variant_of			HGNC	1
-biolink:VariantToGeneAssociation	CLINVAR	biolink:is_sequence_variant_of			HGNC	6054
+biolink:VariantToGeneAssociation	CLINVAR	biolink:is_sequence_variant_of			HGNC	6141

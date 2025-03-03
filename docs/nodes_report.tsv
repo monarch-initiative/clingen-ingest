@@ -247,6 +247,8 @@ biolink:SequenceVariant	CA2017997777	1
 biolink:SequenceVariant	CA2017997779	1
 biolink:SequenceVariant	CA2017997780	1
 biolink:SequenceVariant	CA2018007653	1
+biolink:SequenceVariant	CA2018007654	1
+biolink:SequenceVariant	CA2018007655	1
 biolink:SequenceVariant	CA2018007672	1
 biolink:SequenceVariant	CA2023554331	1
 biolink:SequenceVariant	CA2229914895	1
@@ -345,6 +347,7 @@ biolink:SequenceVariant	CA2580612187	1
 biolink:SequenceVariant	CA2580612188	1
 biolink:SequenceVariant	CA2580617569	1
 biolink:SequenceVariant	CA2580617739	1
+biolink:SequenceVariant	CA2580650458	1
 biolink:SequenceVariant	CA2581998917	1
 biolink:SequenceVariant	CA2582115078	1
 biolink:SequenceVariant	CA2582115911	1
@@ -383,6 +386,7 @@ biolink:SequenceVariant	CA2740089968	1
 biolink:SequenceVariant	CA2740099755	1
 biolink:SequenceVariant	CA2759533407	1
 biolink:SequenceVariant	CA2759533408	1
+biolink:SequenceVariant	CA2797727079	1
 biolink:SequenceVariant	CA281951	1
 biolink:SequenceVariant	CA2825000789	1
 biolink:SequenceVariant	CA2830665544	1
@@ -411,7 +415,10 @@ biolink:SequenceVariant	CA291225782	1
 biolink:SequenceVariant	CA291227621	1
 biolink:SequenceVariant	CA294887189	1
 biolink:SequenceVariant	CA294896907	1
+biolink:SequenceVariant	CA315408883	1
 biolink:SequenceVariant	CA315411422	1
+biolink:SequenceVariant	CA315420234	1
+biolink:SequenceVariant	CA322079952	1
 biolink:SequenceVariant	CA32685503	1
 biolink:SequenceVariant	CA32685671	1
 biolink:SequenceVariant	CA32685841	1
@@ -514,6 +521,7 @@ biolink:SequenceVariant	CA343727113	1
 biolink:SequenceVariant	CA343772379	1
 biolink:SequenceVariant	CA343772388	1
 biolink:SequenceVariant	CA343772391	1
+biolink:SequenceVariant	CA343772421	1
 biolink:SequenceVariant	CA343774510	1
 biolink:SequenceVariant	CA343774795	1
 biolink:SequenceVariant	CA343777244	1
@@ -522,6 +530,11 @@ biolink:SequenceVariant	CA346124255	1
 biolink:SequenceVariant	CA346365197	1
 biolink:SequenceVariant	CA346367589	1
 biolink:SequenceVariant	CA347215735	1
+biolink:SequenceVariant	CA349036828	1
+biolink:SequenceVariant	CA349036836	1
+biolink:SequenceVariant	CA354446617	1
+biolink:SequenceVariant	CA354447789	1
+biolink:SequenceVariant	CA367358198	1
 biolink:SequenceVariant	CA367358349	1
 biolink:SequenceVariant	CA367396714	1
 biolink:SequenceVariant	CA367396716	1
@@ -630,6 +643,7 @@ biolink:SequenceVariant	CA367403035	1
 biolink:SequenceVariant	CA367403041	1
 biolink:SequenceVariant	CA367403045	1
 biolink:SequenceVariant	CA367403047	1
+biolink:SequenceVariant	CA367403318	1
 biolink:SequenceVariant	CA367403522	1
 biolink:SequenceVariant	CA367403541	1
 biolink:SequenceVariant	CA367403544	1
@@ -712,6 +726,7 @@ biolink:SequenceVariant	CA386958695	1
 biolink:SequenceVariant	CA386958785	1
 biolink:SequenceVariant	CA386958847	1
 biolink:SequenceVariant	CA386958912	1
+biolink:SequenceVariant	CA386958942	1
 biolink:SequenceVariant	CA386959080	1
 biolink:SequenceVariant	CA386959120	1
 biolink:SequenceVariant	CA386959402	1
@@ -792,7 +807,6 @@ biolink:SequenceVariant	CA386969831	1
 biolink:SequenceVariant	CA386970356	1
 biolink:SequenceVariant	CA386970411	1
 biolink:SequenceVariant	CA386970422	1
-biolink:SequenceVariant	CA386971548	1
 biolink:SequenceVariant	CA386971639	1
 biolink:SequenceVariant	CA386972011	1
 biolink:SequenceVariant	CA386972260	1
@@ -808,6 +822,8 @@ biolink:SequenceVariant	CA392317923	1
 biolink:SequenceVariant	CA392325153	1
 biolink:SequenceVariant	CA392325892	1
 biolink:SequenceVariant	CA395121845	1
+biolink:SequenceVariant	CA397316321	1
+biolink:SequenceVariant	CA397319701	1
 biolink:SequenceVariant	CA397722455	1
 biolink:SequenceVariant	CA397722480	1
 biolink:SequenceVariant	CA397722888	1
@@ -820,7 +836,6 @@ biolink:SequenceVariant	CA397725976	1
 biolink:SequenceVariant	CA397726273	1
 biolink:SequenceVariant	CA397726277	1
 biolink:SequenceVariant	CA397832787	1
-biolink:SequenceVariant	CA397849034	1
 biolink:SequenceVariant	CA397954276	1
 biolink:SequenceVariant	CA397954516	1
 biolink:SequenceVariant	CA398323709	1
@@ -836,11 +851,9 @@ biolink:SequenceVariant	CA399792888	1
 biolink:SequenceVariant	CA399794330	1
 biolink:SequenceVariant	CA399794666	1
 biolink:SequenceVariant	CA399795582	1
-biolink:SequenceVariant	CA399795907	1
 biolink:SequenceVariant	CA399796017	1
 biolink:SequenceVariant	CA399798192	1
 biolink:SequenceVariant	CA399798321	1
-biolink:SequenceVariant	CA399799004	1
 biolink:SequenceVariant	CA399801004	1
 biolink:SequenceVariant	CA399801096	1
 biolink:SequenceVariant	CA399801154	1
@@ -880,14 +893,12 @@ biolink:SequenceVariant	CA399805805	1
 biolink:SequenceVariant	CA399805884	1
 biolink:SequenceVariant	CA399805912	1
 biolink:SequenceVariant	CA399805999	1
-biolink:SequenceVariant	CA399806022	1
 biolink:SequenceVariant	CA399806084	1
 biolink:SequenceVariant	CA399806223	1
 biolink:SequenceVariant	CA399806384	1
 biolink:SequenceVariant	CA399806497	1
 biolink:SequenceVariant	CA399806749	1
 biolink:SequenceVariant	CA399806951	1
-biolink:SequenceVariant	CA399807023	1
 biolink:SequenceVariant	CA399807046	1
 biolink:SequenceVariant	CA400020703	1
 biolink:SequenceVariant	CA400021329	1
@@ -1040,6 +1051,11 @@ biolink:SequenceVariant	CA410203630	1
 biolink:SequenceVariant	CA410207975	1
 biolink:SequenceVariant	CA410207977	1
 biolink:SequenceVariant	CA410207999	1
+biolink:SequenceVariant	CA410676622	1
+biolink:SequenceVariant	CA410676856	1
+biolink:SequenceVariant	CA410676959	1
+biolink:SequenceVariant	CA410677511	1
+biolink:SequenceVariant	CA410677679	1
 biolink:SequenceVariant	CA410780392	1
 biolink:SequenceVariant	CA413496512	1
 biolink:SequenceVariant	CA414444915	1
@@ -1122,7 +1138,6 @@ biolink:SequenceVariant	CA500261104	1
 biolink:SequenceVariant	CA500262444	1
 biolink:SequenceVariant	CA500273575	1
 biolink:SequenceVariant	CA500436058	1
-biolink:SequenceVariant	CA500624244	1
 biolink:SequenceVariant	CA500651220	1
 biolink:SequenceVariant	CA504731701	1
 biolink:SequenceVariant	CA519344969	1
@@ -1142,6 +1157,7 @@ biolink:SequenceVariant	CA645372267	1
 biolink:SequenceVariant	CA645535219	1
 biolink:SequenceVariant	CA645584081	1
 biolink:SequenceVariant	CA645614124	1
+biolink:SequenceVariant	CA658760369	1
 biolink:SequenceVariant	CA658760617	1
 biolink:SequenceVariant	CA658795235	1
 biolink:SequenceVariant	CA658795239	1
@@ -1194,7 +1210,6 @@ biolink:SequenceVariant	CA8622981	1
 biolink:SequenceVariant	CA8622982	1
 biolink:SequenceVariant	CA8622991	1
 biolink:SequenceVariant	CA8623068	1
-biolink:SequenceVariant	CA8623155	1
 biolink:SequenceVariant	CA8623258	1
 biolink:SequenceVariant	CA8623358	1
 biolink:SequenceVariant	CA8623361	1
@@ -1245,8 +1260,6 @@ biolink:SequenceVariant	CA915940299	1
 biolink:SequenceVariant	CA915940309	1
 biolink:SequenceVariant	CA915940315	1
 biolink:SequenceVariant	CA915940323	1
-biolink:SequenceVariant	CA915940324	1
-biolink:SequenceVariant	CA915940325	1
 biolink:SequenceVariant	CA915940332	1
 biolink:SequenceVariant	CA915940334	1
 biolink:SequenceVariant	CA915940374	1
@@ -1268,7 +1281,6 @@ biolink:SequenceVariant	CA915940687	1
 biolink:SequenceVariant	CA915940689	1
 biolink:SequenceVariant	CA915940690	1
 biolink:SequenceVariant	CA915940701	1
-biolink:SequenceVariant	CA915940720	1
 biolink:SequenceVariant	CA915940722	1
 biolink:SequenceVariant	CA915940723	1
 biolink:SequenceVariant	CA915940724	1
@@ -1309,4 +1321,4 @@ biolink:SequenceVariant	CA9870171	1
 biolink:SequenceVariant	CA9870374	1
 biolink:SequenceVariant	CA9870415	1
 biolink:SequenceVariant	CA9870528	1
-biolink:SequenceVariant	CLINVAR	6126
+biolink:SequenceVariant	CLINVAR	6216
