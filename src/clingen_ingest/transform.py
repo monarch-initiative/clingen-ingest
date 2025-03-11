@@ -49,11 +49,13 @@ while (row := koza_app.get_row()) is not None:
     if row["Assertion"] == "Benign" or row["Assertion"] == "Likely Benign" or row["Retracted"] == "true":
         continue
 
+    allele_registry_curie = "CAID:{}".format(row['Allele Registry Id'])
+
     # DONE: Initially skipping rows with no variant; revisit this decision in the general context of g2d
     # These look like meaningful variants, so I'm transforming them
     # When there is no 'ClinVar Variation Id', use 'Allele Registry Id' as the variant_id
     if row["ClinVar Variation Id"] == "-":
-        variant_id = row['Allele Registry Id']
+        variant_id = allele_registry_curie
     else:
         variant_id = "CLINVAR:{}".format(row['ClinVar Variation Id'])
 
@@ -64,6 +66,7 @@ while (row := koza_app.get_row()) is not None:
         variant_name = row["Variation"]
 
     gene_symbol = row['HGNC Gene Symbol']
+
     gene_id = hgnc_gene_lookup.get(gene_symbol)['hgnc_id'] if gene_symbol in hgnc_gene_lookup else None
     original_disease_predicate = row["Assertion"]
     if variant_id not in seen_variants:
@@ -72,7 +75,7 @@ while (row := koza_app.get_row()) is not None:
             SequenceVariant(
                 id=variant_id,
                 name=variant_name,
-                xref=[row['Allele Registry Id']],
+                xref=[allele_registry_curie],
                 # DONE: populate has_gene the first time, and then append for multiple genes?
                 # There is only one duplicate variant, and they appear to be identical, so I'm skipping this for now
                 has_gene=[gene_id] if gene_id is not None else None,

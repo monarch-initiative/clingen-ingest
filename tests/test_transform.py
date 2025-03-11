@@ -67,7 +67,7 @@ def test_correct_row(correct_entities):
     # test entity
     assert entity.id == 'CLINVAR:586'
     assert entity.name == 'NM_000277.2(PAH):c.1A>G (p.Met1Val)'
-    assert entity.xref == ['CA114360']
+    assert entity.xref == ['CAID:CA114360']
     assert entity.has_gene == ['HGNC:8582']
     assert entity.in_taxon == ['NCBITaxon:9606']
     assert entity.in_taxon_label == 'Homo sapiens'
@@ -145,7 +145,7 @@ def missing_entity_id(mock_koza, correct_row, map_cache):
 # Test the output of the transform for a row with a missing entity_id
 def test_missing_entity_id(missing_entity_id):
     assert len(missing_entity_id) == 3
-    assert missing_entity_id[0].id == "CA114360"
+    assert missing_entity_id[0].id == "CAID:CA114360"
 
 
 # Define the mock koza transform for a row with 'Benign' as the clinical_significance
