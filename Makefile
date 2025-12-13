@@ -71,9 +71,14 @@ test: download
 download:
 	$(RUN) ingest download
 
+.PHONY: preprocess
+preprocess: download
+	$(RUN) python scripts/aggregate_gene_disease.py
+
 .PHONY: run
-run: download
-	$(RUN) ingest transform
+run: preprocess
+	$(RUN) koza transform --source ./src/clingen_ingest/transform.yaml --output-format tsv
+	$(RUN) koza transform --source ./src/clingen_ingest/gene_disease_transform.yaml --output-format tsv
 	$(RUN) python scripts/generate-report.py
 
 
