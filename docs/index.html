@@ -290,17 +290,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    clingen-ingest Report
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -310,43 +299,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nodes-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nodes Report
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edges-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Edges Report
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -372,32 +324,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nodes-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nodes Report
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edges-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Edges Report
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -415,116 +341,6 @@
 
 
 <h1 id="clingen-ingest-report">clingen-ingest Report</h1>
-<h2 id="nodes-report">Nodes Report</h2>
-<table>
-<thead>
-<tr>
-<th>category</th>
-<th>prefix</th>
-<th>count_star()</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>biolink:SequenceVariant</td>
-<td>CAID</td>
-<td>1362</td>
-</tr>
-<tr>
-<td>biolink:SequenceVariant</td>
-<td>CLINVAR</td>
-<td>7741</td>
-</tr>
-</tbody>
-</table>
-<h2 id="edges-report">Edges Report</h2>
-<table>
-<thead>
-<tr>
-<th>category</th>
-<th>subject_prefix</th>
-<th>predicate</th>
-<th>negated</th>
-<th>original_predicate</th>
-<th>object_prefix</th>
-<th>count_star()</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>biolink:VariantToDiseaseAssociation</td>
-<td>CAID</td>
-<td>biolink:associated_with_increased_likelihood_of</td>
-<td></td>
-<td>Likely Pathogenic</td>
-<td>MONDO</td>
-<td>402</td>
-</tr>
-<tr>
-<td>biolink:VariantToDiseaseAssociation</td>
-<td>CAID</td>
-<td>biolink:causes</td>
-<td></td>
-<td>Pathogenic</td>
-<td>MONDO</td>
-<td>533</td>
-</tr>
-<tr>
-<td>biolink:VariantToDiseaseAssociation</td>
-<td>CAID</td>
-<td>biolink:genetically_associated_with</td>
-<td></td>
-<td>Uncertain Significance</td>
-<td>MONDO</td>
-<td>427</td>
-</tr>
-<tr>
-<td>biolink:VariantToDiseaseAssociation</td>
-<td>CLINVAR</td>
-<td>biolink:associated_with_increased_likelihood_of</td>
-<td></td>
-<td>Likely Pathogenic</td>
-<td>MONDO</td>
-<td>1978</td>
-</tr>
-<tr>
-<td>biolink:VariantToDiseaseAssociation</td>
-<td>CLINVAR</td>
-<td>biolink:causes</td>
-<td></td>
-<td>Pathogenic</td>
-<td>MONDO</td>
-<td>2450</td>
-</tr>
-<tr>
-<td>biolink:VariantToDiseaseAssociation</td>
-<td>CLINVAR</td>
-<td>biolink:genetically_associated_with</td>
-<td></td>
-<td>Uncertain Significance</td>
-<td>MONDO</td>
-<td>3315</td>
-</tr>
-<tr>
-<td>biolink:VariantToGeneAssociation</td>
-<td>CAID</td>
-<td>biolink:is_sequence_variant_of</td>
-<td></td>
-<td></td>
-<td>HGNC</td>
-<td>1348</td>
-</tr>
-<tr>
-<td>biolink:VariantToGeneAssociation</td>
-<td>CLINVAR</td>
-<td>biolink:is_sequence_variant_of</td>
-<td></td>
-<td></td>
-<td>HGNC</td>
-<td>7693</td>
-</tr>
-</tbody>
-</table>
 
 
 
