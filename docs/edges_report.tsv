@@ -1,0 +1,9 @@
+category	subject_prefix	predicate	negated	original_predicate	object_prefix	count_star()
+biolink:VariantToDiseaseAssociation	CAID	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	410
+biolink:VariantToDiseaseAssociation	CAID	biolink:causes		Pathogenic	MONDO	540
+biolink:VariantToDiseaseAssociation	CAID	biolink:genetically_associated_with		Uncertain Significance	MONDO	410
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	2015
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:causes		Pathogenic	MONDO	2519
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:genetically_associated_with		Uncertain Significance	MONDO	3358
+biolink:VariantToGeneAssociation	CAID	biolink:is_sequence_variant_of			HGNC	1346
+biolink:VariantToGeneAssociation	CLINVAR	biolink:is_sequence_variant_of			HGNC	7832
