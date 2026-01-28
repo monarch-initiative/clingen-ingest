@@ -1,0 +1,42 @@
+# Config file for transforming aggregated gene-disease data
+# See additional/optional config parameters at https://koza.monarchinitiative.org/Ingests/source_config/
+
+name: "clingen_gene_disease"
+
+reader:
+  name: "clingen_gene_disease_reader"
+  files:
+    - "../data/clingen_gene_disease.tsv"
+  format: "csv"
+  delimiter: "\t"
+  header: 0
+  columns:
+    - gene_symbol
+    - mondo_id
+    - disease_name
+    - strongest_assertion
+
+transform:
+  name: "clingen_gene_disease_transform"
+  mode: "flat"
+
+writer:
+  name: "clingen_gene_disease_writer"
+  node_properties: []
+  edge_properties:
+    - id
+    - subject
+    - predicate
+    - object
+    - original_predicate
+    - category
+    - knowledge_level
+    - agent_type
+    - primary_knowledge_source
+    - aggregator_knowledge_source
+
+depends_on:
+  - "./hgnc_gene_lookup.yaml"
+
+# Minimum expected edges (expecting ~193 g2d associations)
+min_edge_count: 100

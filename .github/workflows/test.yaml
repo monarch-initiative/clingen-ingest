@@ -4,39 +4,31 @@ on:
   push:
     branches: [main]
   pull_request:
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
-  test-backend:
-    runs-on: ${{ matrix.os }}
+  test:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
-        os: [ubuntu-latest]
-        #os: [ ubuntu-latest, windows-latest ]
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          version: "latest"
 
-      #----------------------------------------------
-      #          install & configure poetry
-      #----------------------------------------------
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
 
-      #----------------------------------------------
-      #    install your root project, if required
-      #----------------------------------------------
-      - name: Install library
-        run: poetry install --no-interaction
+      - name: Install dependencies
+        run: uv sync --group dev
 
-      #----------------------------------------------
-      #              run pytest
-      #----------------------------------------------
+      - name: Run linting
+        run: uv run ruff check .
+
       - name: Run tests
-        run: poetry run pytest tests
-
+        run: uv run pytest -v

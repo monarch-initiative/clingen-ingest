@@ -1,0 +1,63 @@
+# Config file for transforming data from a source
+# See additional/optional config parameters at https://koza.monarchinitiative.org/Ingests/source_config/
+
+name: "clingen_variant"
+
+reader:
+  name: "clingen_variant_reader"
+  files:
+    - "../data/clingen_variants.tsv"
+  format: "csv"
+  delimiter: "\t"
+  header: 0
+  columns:
+    - Variation
+    - ClinVar Variation Id
+    - Allele Registry Id
+    - HGVS Expressions
+    - HGNC Gene Symbol
+    - Disease
+    - Mondo Id
+    - Mode of Inheritance
+    - Assertion
+    - Applied Evidence Codes (Met)
+    - Applied Evidence Codes (Not Met)
+    - Summary of interpretation
+    - PubMed Articles
+    - Expert Panel
+    - Guideline
+    - Approval Date
+    - Published Date
+    - Retracted
+    - Evidence Repo Link
+    - Uuid
+
+transform:
+  name: "clingen_variant_transform"
+  mode: "flat"
+
+writer:
+  name: "clingen_variant_writer"
+  node_properties:
+    - id
+    - name
+    - category
+    - xref
+    - has_gene
+    - in_taxon
+    - in_taxon_label
+  edge_properties:
+    - id
+    - subject
+    - predicate
+    - object
+    - negated
+    - original_predicate
+    - category
+    - knowledge_level
+    - agent_type
+    - primary_knowledge_source
+    - aggregator_knowledge_source
+
+depends_on:
+  - "./hgnc_gene_lookup.yaml"

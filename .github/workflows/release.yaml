@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  schedule:
+    # Run monthly on the 1st at midnight UTC
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (leave empty for auto-generated date tag)'
+        required: false
+        type: string
+
+env:
+  TRANSFORMS: "clingen_variant_transform gene_disease_transform"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: uv sync --group dev
+
+      - name: Install just
+        uses: extractions/setup-just@v2
+
+      - name: Download data
+        run: just download
+
+      - name: Preprocess data
+        run: just preprocess
+
+      - name: Run transforms
+        run: |
+          for transform in $TRANSFORMS; do
+            echo "Running transform: $transform"
+            uv run koza transform src/$transform.yaml
+          done
+
+      - name: Generate release tag
+        id: tag
+        run: |
+          if [ -n "${{ inputs.tag }}" ]; then
+            echo "tag=${{ inputs.tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=v$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Release ${{ steps.tag.outputs.tag }}
+          body: |
+            Automated monthly release of ClinGen ingest data.
+
+            ## Transforms included
+            - clingen_variant_transform (ClinGen variants)
+            - gene_disease_transform (Gene-disease associations)
+          draft: false
+          prerelease: false
+          files: |
+            output/*_nodes.tsv
+            output/*_edges.tsv

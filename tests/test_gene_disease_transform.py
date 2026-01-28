@@ -3,21 +3,64 @@ Tests for the gene-to-disease transform.
 
 Tests the transformation of aggregated gene-disease data to
 CausalGeneToDiseaseAssociation entities.
+
+Uses KozaRunner with PassthroughWriter for Koza 2.x testing.
 """
 
+import importlib.util
+from pathlib import Path
+
 import pytest
-from koza.utils.testing_utils import mock_koza
+from koza.runner import KozaTransform, PassthroughWriter, load_transform
 
-mock_koza = mock_koza  # Prevent removal on formatting
+# Define the transform script path
+TRANSFORM_SCRIPT = Path(__file__).parent.parent / "src" / "gene_disease_transform.py"
 
-# Define the ingest name and transform script path
-INGEST_NAME = "clingen_gene_disease"
-TRANSFORM_SCRIPT = "./src/clingen_ingest/gene_disease_transform.py"
+
+def load_module_from_path(path: Path):
+    """Load a Python module from a file path."""
+    spec = importlib.util.spec_from_file_location(path.stem, path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def run_transform(rows: list[dict], mappings: dict = None) -> list:
+    """Run the transform with given rows and optional mappings.
+
+    Args:
+        rows: List of row dictionaries to transform
+        mappings: Optional mapping dict in format {map_name: {key: {column: value}}}
+    """
+    module = load_module_from_path(TRANSFORM_SCRIPT)
+    hooks_by_tag = load_transform(module)
+    # Get hooks for untagged transforms (key is None)
+    hooks = hooks_by_tag.get(None)
+    if hooks is None:
+        raise ValueError("No untagged transforms found in module")
+
+    writer = PassthroughWriter()
+
+    # Create KozaTransform directly with mappings
+    koza_transform = KozaTransform(
+        mappings=mappings or {},
+        writer=writer,
+        extra_fields={},
+    )
+
+    # Run the transform_record functions for each row
+    for row in rows:
+        for transform_fn in hooks.transform_record:
+            result = transform_fn(koza_transform, row)
+            if result is not None:
+                writer.write(result)
+
+    return writer.data
 
 
 @pytest.fixture
-def map_cache():
-    """HGNC gene lookup for test genes."""
+def mappings():
+    """HGNC gene lookup for test genes in Koza 2.x format."""
     return {
         "hgnc_gene_lookup": {
             "PAH": {"hgnc_id": "HGNC:8582"},
@@ -60,18 +103,18 @@ def unknown_gene_row():
 
 
 @pytest.fixture
-def pathogenic_entities(mock_koza, pathogenic_row, map_cache):
-    return mock_koza(INGEST_NAME, pathogenic_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def pathogenic_entities(pathogenic_row, mappings):
+    return run_transform([pathogenic_row], mappings=mappings)
 
 
 @pytest.fixture
-def likely_pathogenic_entities(mock_koza, likely_pathogenic_row, map_cache):
-    return mock_koza(INGEST_NAME, likely_pathogenic_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def likely_pathogenic_entities(likely_pathogenic_row, mappings):
+    return run_transform([likely_pathogenic_row], mappings=mappings)
 
 
 @pytest.fixture
-def unknown_gene_entities(mock_koza, unknown_gene_row, map_cache):
-    return mock_koza(INGEST_NAME, unknown_gene_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def unknown_gene_entities(unknown_gene_row, mappings):
+    return run_transform([unknown_gene_row], mappings=mappings)
 
 
 def test_pathogenic_assertion(pathogenic_entities):
@@ -105,9 +148,10 @@ def test_unknown_gene_skipped(unknown_gene_entities):
     assert len(unknown_gene_entities) == 0
 
 
-def test_invalid_assertion(mock_koza, pathogenic_row, map_cache):
+def test_invalid_assertion(pathogenic_row, mappings):
     """Test that invalid assertions raise ValueError."""
-    pathogenic_row["strongest_assertion"] = "Invalid"
+    row = pathogenic_row.copy()
+    row["strongest_assertion"] = "Invalid"
     with pytest.raises(ValueError) as e_info:
-        mock_koza(INGEST_NAME, pathogenic_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+        run_transform([row], mappings=mappings)
     assert "Unexpected assertion" in str(e_info.value)
