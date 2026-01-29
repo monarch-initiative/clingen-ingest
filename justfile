@@ -26,8 +26,8 @@ run: download preprocess transform-all postprocess
 
 # Download source data
 [group('ingest')]
-download:
-    uv run koza download download.yaml
+download: install
+    uv run downloader download.yaml
 
 # Preprocess: aggregate variant data to gene-disease associations
 [group('ingest')]
