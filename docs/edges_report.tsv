@@ -1,9 +1,9 @@
 category	subject_prefix	predicate	negated	original_predicate	object_prefix	count_star()
-biolink:VariantToDiseaseAssociation	CAID	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	415
-biolink:VariantToDiseaseAssociation	CAID	biolink:causes		Pathogenic	MONDO	547
-biolink:VariantToDiseaseAssociation	CAID	biolink:genetically_associated_with		Uncertain Significance	MONDO	414
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	2033
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:causes		Pathogenic	MONDO	2549
-biolink:VariantToDiseaseAssociation	CLINVAR	biolink:genetically_associated_with		Uncertain Significance	MONDO	3382
-biolink:VariantToGeneAssociation	CAID	biolink:is_sequence_variant_of			HGNC	1362
-biolink:VariantToGeneAssociation	CLINVAR	biolink:is_sequence_variant_of			HGNC	7904
+biolink:VariantToDiseaseAssociation	CAID	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	424
+biolink:VariantToDiseaseAssociation	CAID	biolink:causes		Pathogenic	MONDO	548
+biolink:VariantToDiseaseAssociation	CAID	biolink:genetically_associated_with		Uncertain Significance	MONDO	370
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:associated_with_increased_likelihood_of		Likely Pathogenic	MONDO	2088
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:causes		Pathogenic	MONDO	2589
+biolink:VariantToDiseaseAssociation	CLINVAR	biolink:genetically_associated_with		Uncertain Significance	MONDO	3474
+biolink:VariantToGeneAssociation	CAID	biolink:is_sequence_variant_of			HGNC	1328
+biolink:VariantToGeneAssociation	CLINVAR	biolink:is_sequence_variant_of			HGNC	8086
