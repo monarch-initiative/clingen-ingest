@@ -31,24 +31,8 @@ jobs:
       - name: Set up Python
         run: uv python install 3.11
 
-      - name: Install dependencies
-        run: uv sync --group dev
-
-      - name: Install just
-        uses: extractions/setup-just@v2
-
-      - name: Download data
-        run: just download
-
-      - name: Preprocess data
-        run: just preprocess
-
-      - name: Run transforms
-        run: |
-          for transform in $TRANSFORMS; do
-            echo "Running transform: $transform"
-            uv run koza transform src/$transform.yaml
-          done
+      - name: Run pipeline
+        run: just run
 
       - name: Generate release tag
         id: tag

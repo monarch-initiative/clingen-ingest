@@ -24,11 +24,5 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         run: uv python install ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: uv sync --group dev
-
-      - name: Run linting
-        run: uv run ruff check .
-
-      - name: Run tests
-        run: uv run pytest -v
+      - name: Run pipeline
+        run: just run
