@@ -4,12 +4,11 @@
 name: "clingen_gene_disease"
 
 reader:
-  name: "clingen_gene_disease_reader"
   files:
     - "../data/clingen_gene_disease.tsv"
   format: "csv"
   delimiter: "\t"
-  header: 0
+  header_mode: 0
   columns:
     - gene_symbol
     - mondo_id
@@ -19,9 +18,10 @@ reader:
 transform:
   name: "clingen_gene_disease_transform"
   mode: "flat"
+  mappings:
+    - "./hgnc_gene_lookup.yaml"
 
 writer:
-  name: "clingen_gene_disease_writer"
   node_properties: []
   edge_properties:
     - id
@@ -35,8 +35,5 @@ writer:
     - primary_knowledge_source
     - aggregator_knowledge_source
 
-depends_on:
-  - "./hgnc_gene_lookup.yaml"
-
 # Minimum expected edges (expecting ~193 g2d associations)
-min_edge_count: 100
+# min_edge_count: 100  # TODO: Check if this field is supported in Koza 2.x

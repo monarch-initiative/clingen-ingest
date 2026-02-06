@@ -1,17 +1,11 @@
 name: 'hgnc_gene_lookup'
 
-files:
-  - '../data/hgnc_complete_set.txt'
-
-format: 'csv'
-
-delimiter: '\t'
-
-key: symbol
-values:
-  - hgnc_id
-
-columns:
+reader:
+  files:
+    - '../data/hgnc_complete_set.txt'
+  format: 'csv'
+  delimiter: '\t'
+  columns:
   - hgnc_id
   - symbol
   - name
@@ -66,3 +60,8 @@ columns:
   - agr
   - mane_select
   - gencc
+
+transform:
+  key: symbol
+  values:
+    - hgnc_id

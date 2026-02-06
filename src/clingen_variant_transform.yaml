@@ -4,12 +4,12 @@
 name: "clingen_variant"
 
 reader:
-  name: "clingen_variant_reader"
   files:
     - "../data/clingen_variants.tsv"
   format: "csv"
   delimiter: "\t"
-  header: 0
+  header_mode: 0
+  header_prefix: "#"
   columns:
     - Variation
     - ClinVar Variation Id
@@ -35,9 +35,10 @@ reader:
 transform:
   name: "clingen_variant_transform"
   mode: "flat"
+  mappings:
+    - "./hgnc_gene_lookup.yaml"
 
 writer:
-  name: "clingen_variant_writer"
   node_properties:
     - id
     - name
@@ -58,6 +59,3 @@ writer:
     - agent_type
     - primary_knowledge_source
     - aggregator_knowledge_source
-
-depends_on:
-  - "./hgnc_gene_lookup.yaml"

@@ -7,22 +7,10 @@ CausalGeneToDiseaseAssociation entities.
 Uses KozaRunner with PassthroughWriter for Koza 2.x testing.
 """
 
-import importlib.util
-from pathlib import Path
-
 import pytest
-from koza.runner import KozaTransform, PassthroughWriter, load_transform
+from koza.runner import KozaTransform, PassthroughWriter
 
-# Define the transform script path
-TRANSFORM_SCRIPT = Path(__file__).parent.parent / "src" / "gene_disease_transform.py"
-
-
-def load_module_from_path(path: Path):
-    """Load a Python module from a file path."""
-    spec = importlib.util.spec_from_file_location(path.stem, path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+from gene_disease_transform import transform
 
 
 def run_transform(rows: list[dict], mappings: dict = None) -> list:
@@ -32,30 +20,21 @@ def run_transform(rows: list[dict], mappings: dict = None) -> list:
         rows: List of row dictionaries to transform
         mappings: Optional mapping dict in format {map_name: {key: {column: value}}}
     """
-    module = load_module_from_path(TRANSFORM_SCRIPT)
-    hooks_by_tag = load_transform(module)
-    # Get hooks for untagged transforms (key is None)
-    hooks = hooks_by_tag.get(None)
-    if hooks is None:
-        raise ValueError("No untagged transforms found in module")
-
-    writer = PassthroughWriter()
-
-    # Create KozaTransform directly with mappings
+    # Create KozaTransform with mappings
     koza_transform = KozaTransform(
         mappings=mappings or {},
-        writer=writer,
+        writer=PassthroughWriter(),
         extra_fields={},
     )
 
-    # Run the transform_record functions for each row
+    # Collect entities returned from transform
+    entities = []
     for row in rows:
-        for transform_fn in hooks.transform_record:
-            result = transform_fn(koza_transform, row)
-            if result is not None:
-                writer.write(result)
+        result = transform(koza_transform, row)
+        if result:
+            entities.extend(result)
 
-    return writer.data
+    return entities
 
 
 @pytest.fixture
