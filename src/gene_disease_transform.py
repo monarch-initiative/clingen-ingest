@@ -2,15 +2,12 @@
 
 import uuid
 
+import koza
 from biolink_model.datamodel.pydanticmodel_v2 import (
     AgentTypeEnum,
     CausalGeneToDiseaseAssociation,
     KnowledgeLevelEnum,
 )
-from koza.cli_utils import get_koza_app
-
-koza_app = get_koza_app("clingen_gene_disease")
-hgnc_gene_lookup = koza_app.get_map("hgnc_gene_lookup")
 
 # Gene to disease predicates (matching variant-to-disease predicates)
 CAUSES = "biolink:causes"
@@ -27,15 +24,19 @@ def get_predicate(assertion: str) -> str:
         raise ValueError(f"Unexpected assertion: '{assertion}'")
 
 
-while (row := koza_app.get_row()) is not None:
+@koza.transform_record()
+def transform(koza_transform, row):
+    """Transform an aggregated gene-disease row to a CausalGeneToDiseaseAssociation."""
     gene_symbol = row["gene_symbol"]
     mondo_id = row["mondo_id"]
     strongest_assertion = row["strongest_assertion"]
 
-    # Look up HGNC gene ID
-    if gene_symbol not in hgnc_gene_lookup:
-        continue
-    gene_id = hgnc_gene_lookup[gene_symbol]["hgnc_id"]
+    # Look up HGNC gene ID using koza 2.x API
+    # lookup(name, map_column, map_name) returns the value or the name if not found
+    gene_id = koza_transform.lookup(gene_symbol, "hgnc_id", "hgnc_gene_lookup")
+    # If lookup fails, it returns the input name - so check if it's a valid HGNC ID
+    if gene_id == gene_symbol or not gene_id.startswith("HGNC:"):
+        return []
 
     predicate = get_predicate(strongest_assertion)
 
@@ -51,4 +52,4 @@ while (row := koza_app.get_row()) is not None:
         agent_type=AgentTypeEnum.manual_agent,
     )
 
-    koza_app.write(association)
+    return [association]

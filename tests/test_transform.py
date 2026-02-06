@@ -1,29 +1,55 @@
 """
-An example test file for the transform script.
+Test file for the clingen variant transform script.
 
-It uses pytest fixtures to define the input data and the mock koza transform.
-The test_example function then tests the output of the transform script.
+Uses KozaRunner with PassthroughWriter for Koza 2.x testing.
 
 See the Koza documentation for more information on testing transforms:
 https://koza.monarchinitiative.org/Usage/testing/
 """
 
 import pytest
-from koza.utils.testing_utils import mock_koza
 
-mock_koza = mock_koza  # This line is needed to avoid black removing the import on formatting
-
-# Define the ingest name and transform script path
-INGEST_NAME = "clingen_variant"
-TRANSFORM_SCRIPT = "./src/clingen_ingest/transform.py"
+import clingen_variant_transform
+from clingen_variant_transform import transform
+from koza.runner import KozaTransform, PassthroughWriter
 
 
-# define map_cache
+def run_transform(rows: list[dict], mappings: dict = None) -> list:
+    """Run the transform with given rows and optional mappings.
+
+    Args:
+        rows: List of row dictionaries to transform
+        mappings: Optional mapping dict in format {map_name: {key: {column: value}}}
+    """
+    # Reset the seen_variants global state for each test run
+    clingen_variant_transform.seen_variants = {}
+
+    # Create KozaTransform with mappings
+    koza_transform = KozaTransform(
+        mappings=mappings or {},
+        writer=PassthroughWriter(),
+        extra_fields={},
+    )
+
+    # Collect entities returned from transform
+    entities = []
+    for row in rows:
+        result = transform(koza_transform, row)
+        if result:
+            entities.extend(result)
+
+    return entities
+
+
+# Define mappings in Koza 2.x format
 @pytest.fixture
-def map_cache():
-    # Add gene lookup values to map_cache for HGNC lookup.
-    # NOTE: This must match the HGNC information for 'HGNC Gene Symbol' in correct row
-    return {"hgnc_gene_lookup": {"PAH": {"hgnc_id": "HGNC:8582"}}}
+def mappings():
+    # Koza 2.x mappings format: {map_name: {key: {column: value}}}
+    return {
+        "hgnc_gene_lookup": {
+            "PAH": {"hgnc_id": "HGNC:8582"}
+        }
+    }
 
 
 # Define an example row to test (as a dictionary)
@@ -53,11 +79,11 @@ def correct_row():
     }
 
 
-# Define the mock koza transform for a correct row
+# Define the fixture for a correct row
 @pytest.fixture
-def correct_entities(mock_koza, correct_row, map_cache):
+def correct_entities(correct_row, mappings):
     # Returns [entity, association_a, association_b] for a single row
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+    return run_transform([correct_row], mappings=mappings)
 
 
 # Test the output of the transform for a correct row
@@ -95,12 +121,13 @@ def test_correct_row(correct_entities):
     assert association_b.agent_type == 'manual_agent'
 
 
-# Define the mock koza transform for a correct row with no gene_id
+# Define the fixture for a correct row with no gene_id
 @pytest.fixture
-def correct_entities_no_gene_id(mock_koza, correct_row, map_cache):
+def correct_entities_no_gene_id(correct_row, mappings):
     # Returns [entity, association] for a single row
-    correct_row["HGNC Gene Symbol"] = "N/A"
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+    row = correct_row.copy()
+    row["HGNC Gene Symbol"] = "N/A"
+    return run_transform([row], mappings=mappings)
 
 
 # Test the output of the transform for a correct row
@@ -109,12 +136,13 @@ def test_correct_row_no_gene_id(correct_entities_no_gene_id):
     assert len(correct_entities_no_gene_id) == 2
 
 
-# Define the mock koza transform for a retracted row
+# Define the fixture for a retracted row
 @pytest.fixture
-def retracted_entities(mock_koza, correct_row, map_cache):
-    # Returns [entity_a, entity_b, association] for a single row
-    correct_row["Retracted"] = "true"
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def retracted_entities(correct_row, mappings):
+    # Returns empty list for a retracted row
+    row = correct_row.copy()
+    row["Retracted"] = "true"
+    return run_transform([row], mappings=mappings)
 
 
 # Test the output of the transform for a retracted row
@@ -122,11 +150,12 @@ def test_retracted_row(retracted_entities):
     assert len(retracted_entities) == 0
 
 
-# Define the mock koza transform for a row with an empty variation
+# Define the fixture for a row with an empty variation
 @pytest.fixture
-def empty_variation(mock_koza, correct_row, map_cache):
-    correct_row["Variation"] = ""
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def empty_variation(correct_row, mappings):
+    row = correct_row.copy()
+    row["Variation"] = ""
+    return run_transform([row], mappings=mappings)
 
 
 # Test the output of the transform for a row with an empty variation
@@ -135,11 +164,12 @@ def test_empty_variation(empty_variation):
     assert empty_variation[0].name == "NM_000277.2:c.1A>G"
 
 
-# Define the mock koza transform for a row with a missing entity_id
+# Define the fixture for a row with a missing entity_id
 @pytest.fixture
-def missing_entity_id(mock_koza, correct_row, map_cache):
-    correct_row["ClinVar Variation Id"] = "-"
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def missing_entity_id(correct_row, mappings):
+    row = correct_row.copy()
+    row["ClinVar Variation Id"] = "-"
+    return run_transform([row], mappings=mappings)
 
 
 # Test the output of the transform for a row with a missing entity_id
@@ -148,43 +178,38 @@ def test_missing_entity_id(missing_entity_id):
     assert missing_entity_id[0].id == "CAID:CA114360"
 
 
-# Define the mock koza transform for a row with 'Benign' as the clinical_significance
+# Define the fixture for a row with 'Benign' as the clinical_significance
 @pytest.fixture
-def correct_entities_benign(mock_koza, correct_row, map_cache):
-    correct_row["Assertion"] = "Benign"
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def correct_entities_benign(correct_row, mappings):
+    row = correct_row.copy()
+    row["Assertion"] = "Benign"
+    return run_transform([row], mappings=mappings)
 
 
 # Test 'clinical_significance' values of 'Benign'
 def test_correct_row_benign(correct_entities_benign):
     assert len(correct_entities_benign) == 0
-    # entity, association_a, association_b = correct_entities_benign
-    # assert association_a.predicate == 'biolink:contributes_to'
-    # assert association_a.negated is True
-    # assert association_a.original_predicate == 'Benign'
 
 
-# Define the mock koza transform for a row with 'Likely Benign' as the clinical_significance
+# Define the fixture for a row with 'Likely Benign' as the clinical_significance
 @pytest.fixture
-def correct_entities_likely_benign(mock_koza, correct_row, map_cache):
-    correct_row["Assertion"] = "Likely Benign"
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def correct_entities_likely_benign(correct_row, mappings):
+    row = correct_row.copy()
+    row["Assertion"] = "Likely Benign"
+    return run_transform([row], mappings=mappings)
 
 
 # Test 'clinical_significance' values of 'Likely Benign'
 def test_correct_row_likely_benign(correct_entities_likely_benign):
     assert len(correct_entities_likely_benign) == 0
-    # entity, association_a, association_b = correct_entities_likely_benign
-    # assert association_a.predicate == 'biolink:contributes_to'
-    # assert association_a.negated is True
-    # assert association_a.original_predicate == 'Likely Benign'
 
 
-# Define the mock koza transform for a row with 'Likely Pathogenic' as the clinical_significance
+# Define the fixture for a row with 'Likely Pathogenic' as the clinical_significance
 @pytest.fixture
-def correct_entities_likely_pathogenic(mock_koza, correct_row, map_cache):
-    correct_row["Assertion"] = "Likely Pathogenic"
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def correct_entities_likely_pathogenic(correct_row, mappings):
+    row = correct_row.copy()
+    row["Assertion"] = "Likely Pathogenic"
+    return run_transform([row], mappings=mappings)
 
 
 # Test 'clinical_significance' values of 'Likely Pathogenic'
@@ -196,11 +221,12 @@ def test_correct_row_likely_pathogenic(correct_entities_likely_pathogenic):
     assert association_a.original_predicate == 'Likely Pathogenic'
 
 
-# Define the mock koza transform for a row with 'Uncertain Significance' as the clinical_significance
+# Define the fixture for a row with 'Uncertain Significance' as the clinical_significance
 @pytest.fixture
-def correct_entities_uncertain_significance(mock_koza, correct_row, map_cache):
-    correct_row["Assertion"] = "Uncertain Significance"
-    return mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
+def correct_entities_uncertain_significance(correct_row, mappings):
+    row = correct_row.copy()
+    row["Assertion"] = "Uncertain Significance"
+    return run_transform([row], mappings=mappings)
 
 
 # Test 'clinical_significance' values of 'Uncertain Significance'
@@ -212,8 +238,9 @@ def test_correct_row_uncertain_significance(correct_entities_uncertain_significa
     assert association_a.original_predicate == 'Uncertain Significance'
 
 
-def test_invalid_clinical_significance(mock_koza, correct_row, map_cache):
-    correct_row["Assertion"] = "Invalid"
+def test_invalid_clinical_significance(correct_row, mappings):
+    row = correct_row.copy()
+    row["Assertion"] = "Invalid"
     with pytest.raises(ValueError) as e_info:
-        mock_koza(INGEST_NAME, correct_row, TRANSFORM_SCRIPT, map_cache=map_cache)
-        assert str(e_info.value) == "Not sure how to handle _assertion: 'Invalid'"
+        run_transform([row], mappings=mappings)
+    assert "Not sure how to handle _assertion: 'Invalid'" in str(e_info.value)

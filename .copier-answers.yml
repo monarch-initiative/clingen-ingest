@@ -1,0 +1,12 @@
+_commit: adada77
+_src_path: gh:monarch-initiative/koza-ingest-template
+copyright_year: '2026'
+email: info@monarchinitiative.org
+full_name: Monarch Initiative
+github_handle: monarch-initiative
+github_org: monarch-initiative
+license: BSD-3-Clause
+project_description: Conversion of ClinGen variant and gene-disease data to Biolink
+    model format
+project_name: clingen-ingest
+project_slug: clingen_ingest
