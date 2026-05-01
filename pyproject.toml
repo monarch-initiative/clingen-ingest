@@ -16,10 +16,22 @@ dynamic = ["version"]
 
 dependencies = [
   "koza>=2.0.0",
+<<<<<<< before updating
   "kghub-downloader>=0.4.0",
   "biolink-model>=4.0.0",
   "duckdb>=0.10.2",
+=======
+  "biolink-model>=4.0.0",
+  "kghub-downloader>=0.3.0",
+  "kozahub-metadata-schema",
+  "requests>=2.28.0",
+>>>>>>> after updating
 ]
+
+[tool.uv.sources]
+# Path-dep on the kozahub metadata schema. Assumes the schema repo is checked
+# out as a sibling directory. Switch to `git = ...` or PyPI once published.
+kozahub-metadata-schema = { path = "../kozahub-metadata-schema", editable = true }
 
 [dependency-groups]
 dev = [

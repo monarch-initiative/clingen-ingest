@@ -28,11 +28,14 @@ run: download preprocess transform-all postprocess
 [group('ingest')]
 download: install
     uv run downloader download.yaml
+<<<<<<< before updating
 
 # Preprocess: aggregate variant data to gene-disease associations
 [group('ingest')]
 preprocess:
     uv run python scripts/aggregate_gene_disease.py
+=======
+>>>>>>> after updating
 
 # Run all transforms
 [group('ingest')]
@@ -46,6 +49,17 @@ transform-all: download
         fi
     done
 
+<<<<<<< before updating
+=======
+# Emit output/release-metadata.yaml describing this build's upstream sources and artifacts
+[group('ingest')]
+metadata:
+    uv run python scripts/write_metadata.py
+
+# Run full pipeline: install, download, transform, metadata, test
+[group('ingest')]
+run: test transform-all metadata
+>>>>>>> after updating
 
 # Run specific transform
 [group('ingest')]
