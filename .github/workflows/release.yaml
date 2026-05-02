@@ -1,4 +1,4 @@
-name: Release
+name: Create Release
 
 on:
   schedule:
@@ -15,13 +15,14 @@ env:
   TRANSFORMS: "clingen_variant_transform gene_disease_transform"
 
 jobs:
-  release:
+  create-release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Install uv
         uses: astral-sh/setup-uv@v4
@@ -62,3 +63,4 @@ jobs:
           files: |
             output/*_nodes.tsv
             output/*_edges.tsv
+            output/release-metadata.yaml

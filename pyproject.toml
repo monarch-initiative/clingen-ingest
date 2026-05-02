@@ -19,7 +19,12 @@ dependencies = [
   "kghub-downloader>=0.4.0",
   "biolink-model>=4.0.0",
   "duckdb>=0.10.2",
+  "kozahub-metadata-schema",
+  "requests>=2.28.0",
 ]
+
+[tool.uv.sources]
+kozahub-metadata-schema = { git = "https://github.com/monarch-initiative/kozahub-metadata-schema", rev = "main" }
 
 [dependency-groups]
 dev = [
