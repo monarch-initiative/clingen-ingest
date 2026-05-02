@@ -63,3 +63,4 @@ jobs:
           files: |
             output/*_nodes.tsv
             output/*_edges.tsv
+            output/release-metadata.yaml
