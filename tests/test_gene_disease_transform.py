@@ -102,6 +102,7 @@ def test_pathogenic_assertion(pathogenic_entities):
     association = pathogenic_entities[0]
 
     assert association.subject == "HGNC:8582"
+    assert association.id.startswith("urn:uuid:")
     assert association.predicate == "biolink:causes"
     assert association.object == "MONDO:0009861"
     assert association.original_predicate == "Pathogenic"
