@@ -86,7 +86,7 @@ def transform(koza_transform, row):
     predicate, negated = get_disease_predicate_and_negation(original_disease_predicate)
     entities.append(
         VariantToDiseaseAssociation(
-            id=str(uuid.uuid4()),
+            id=f"urn:uuid:{uuid.uuid4()}",
             subject=variant_id,
             predicate=predicate,
             negated=negated,
@@ -102,7 +102,7 @@ def transform(koza_transform, row):
     if gene_id is not None:
         entities.append(
             VariantToGeneAssociation(
-                id=str(uuid.uuid4()),
+                id=f"urn:uuid:{uuid.uuid4()}",
                 subject=variant_id,
                 predicate=IS_SEQUENCE_VARIANT_OF,
                 object=gene_id,

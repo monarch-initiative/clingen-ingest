@@ -100,6 +100,9 @@ def test_correct_row(correct_entities):
 
     # test association_a
     assert association_a.subject == 'CLINVAR:586'
+    # urn:uuid edge ids pass through the RDF export as valid IRIs
+    assert association_a.id.startswith('urn:uuid:')
+    assert association_b.id.startswith('urn:uuid:')
     assert association_a.predicate == 'biolink:causes'
     assert association_a.negated is False
     assert association_a.original_predicate == 'Pathogenic'

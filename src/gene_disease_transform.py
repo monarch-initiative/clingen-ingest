@@ -41,7 +41,7 @@ def transform(koza_transform, row):
     predicate = get_predicate(strongest_assertion)
 
     association = CausalGeneToDiseaseAssociation(
-        id=str(uuid.uuid4()),
+        id=f"urn:uuid:{uuid.uuid4()}",
         subject=gene_id,
         predicate=predicate,
         object=mondo_id,
